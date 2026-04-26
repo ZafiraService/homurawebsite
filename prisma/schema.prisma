@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admins")
+}
+
+model UnbanRequest {
+  id        Int     @id @default(autoincrement())
+  discordId String
+  username  String
+  reason    String
+  status    String  @default("pending") // pending, approved, rejected
+  adminNotes String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("unban_requests")
+  @@index([status])
+}
+
+model UnmuteRequest {
+  id        Int     @id @default(autoincrement())
+  discordId String
+  username  String
+  reason    String
+  status    String  @default("pending") // pending, approved, rejected
+  adminNotes String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("unmute_requests")
+  @@index([status])
+}
+
+model ReportRequest {
+  id        Int     @id @default(autoincrement())
+  reporterDiscordId String
+  reporterUsername String
+  reportedDiscordId String
+  reportedUsername String
+  reason    String
+  description String
+  status    String  @default("pending") // pending, in_review, resolved, dismissed
+  adminNotes String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("report_requests")
+  @@index([status])
+}
+
+model CandidatureRequest {
+  id        Int     @id @default(autoincrement())
+  discordId String
+  username  String
+  email     String
+  position  String  // moderator, helper, staff
+  message   String
+  status    String  @default("pending") // pending, approved, rejected
+  adminNotes String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("candidature_requests")
+  @@index([status])
+}
+
+model Communication {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String
+  type      String  @default("announcement") // announcement, update, warning, event
+  isActive  Boolean @default(true)
+  priority  Int     @default(0) // 0 = normal, 1 = high
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("communications")
+  @@index([isActive])
+}

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homura - Discord Community | Join Us Today</title>
+    <meta name="description" content="Welcome to Homura, a thriving Discord community. Join thousands of members for gaming, discussions, and fun events. A safe space for everyone to connect.">
+    <meta name="author" content="Homura Community">
+    <meta name="keywords" content="Discord, Community, Homura, Gaming, Social, Events, Members">
+    <meta name="theme-color" content="#7B2D8F">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://homura-discord.com">
+    <meta property="og:title" content="Homura - Discord Community">
+    <meta property="og:description" content="Join Homura, a thriving Discord community for passionate players and enthusiasts">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://homura-discord.com">
+    <meta property="twitter:title" content="Homura - Discord Community">
+    <meta property="twitter:description" content="Join Homura, a thriving Discord community">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+        
+        .discord-btn {
+            background: #5865F2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .discord-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            z-index: 1;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #764ba2;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid white;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid white;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #764ba2;
+        }
+        
+        /* Communications Section */
+        .communications {
+            padding: 5rem 2rem;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .message-card {
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-left: 5px solid #764ba2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .message-type {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .message-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .message-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .message-date {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 2rem;
+            background: white;
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">homura</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#communications">Comunicazioni</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#join" class="discord-btn">Join Discord</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Homura</h1>
+            <p>A thriving Discord community where gamers and enthusiasts come together to share their passion, make friends, and have fun</p>
+            <div class="hero-buttons">
+                <a href="https://discord.gg/homura" class="btn-primary">Join Our Discord</a>
+                <a href="#features" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communications Section -->
+    <section id="communications" class="communications">
+        <h2 class="section-title">📢 Comunicazioni</h2>
+        <p class="section-subtitle">Ultimi annunci e aggiornamenti dalla community</p>
+        
+        <div class="messages-grid" id="messagesContainer">
+            <div style="text-align: center; grid-column: 1 / -1; color: #666;">
+                Caricamento comunicazioni...
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Why Join Homura?</h2>
+        <p class="section-subtitle">Discover what makes our community special</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <h3>Gaming</h3>
+                <p>Connect with fellow gamers, join gaming sessions, and compete in tournaments</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Community</h3>
+                <p>A welcoming space for everyone to make friends and build meaningful connections</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎉</div>
+                <h3>Events</h3>
+                <p>Regular events, giveaways, and special activities to keep the community engaged</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Discussions</h3>
+                <p>Share your thoughts, discuss your favorite games, and explore new topics</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Competitive</h3>
+                <p>Participate in ranked challenges and prove your skills against other members</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Global</h3>
+                <p>Join thousands of members from around the world in a diverse community</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="stats-container">
+            <div>
+                <div class="stat">5K+</div>
+                <div class="stat-label">Active Members</div>
+            </div>
+            <div>
+                <div class="stat">50+</div>
+                <div class="stat-label">Events Per Month</div>
+            </div>
+            <div>
+                <div class="stat">100+</div>
+                <div class="stat-label">Gaming Categories</div>
+            </div>
+            <div>
+                <div class="stat">24/7</div>
+                <div class="stat-label">Community Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="join">
+        <div class="cta-container">
+            <h2>Ready to Join?</h2>
+            <p>Don't miss out! Join thousands of members in the Homura Discord community. Make new friends, participate in exciting events, and be part of something special.</p>
+            <a href="https://discord.gg/homura" class="btn-primary">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#">Rules</a>
+                <a href="#">Privacy</a>
+                <a href="#">Contact</a>
+                <a href="https://discord.gg/homura">Discord Server</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Homura Community. All rights reserved. | Built with passion for gamers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Load communications from API
+        async function loadCommunications() {
+            try {
+                const response = await fetch('/api/communication');
+                const communications = await response.json();
+                
+                const container = document.getElementById('messagesContainer');
+                
+                if (communications.length === 0) {
+                    container.innerHTML = '<div style="text-align: center; grid-column: 1 / -1; color: #666;">Nessuna comunicazione al momento</div>';
+                    return;
+                }
+                
+                container.innerHTML = communications.map(comm => `
+                    <div class="message-card">
+                        <div class="message-type">${getTypeEmoji(comm.type)} ${comm.type}</div>
+                        <h3>${comm.title}</h3>
+                        <p>${comm.content}</p>
+                        <div class="message-date">${new Date(comm.createdAt).toLocaleDateString('it-IT')}</div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading communications:', error);
+                document.getElementById('messagesContainer').innerHTML = '<div style="text-align: center; grid-column: 1 / -1; color: #666;">Errore nel caricamento delle comunicazioni</div>';
+            }
+        }
+        
+        function getTypeEmoji(type) {
+            const emojis = {
+                announcement: '📢',
+                update: '🔄',
+                warning: '⚠️',
+                event: '🎉'
+            };
+            return emojis[type] || '📌';
+        }
+        
+        // Load on page load
+        loadCommunications();
+    </script>
+</body>
+</html>
